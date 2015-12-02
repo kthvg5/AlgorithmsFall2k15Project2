@@ -36,5 +36,9 @@ notes to know before reading our steps:
     If there is a tie hightest centrality, mark all of them.
 9) Repeat 4x (so, five total itterations)
 
+Upon closer inspection, it looks like the majority of the stats are for the unweighted graphs. However
+we get extra credit for fining "Additional interesting information." So maybe doing this for weighted
+as well would count.
+
 At verious points through this we will be outputting some information so that we can make graphs out of it later.
 */

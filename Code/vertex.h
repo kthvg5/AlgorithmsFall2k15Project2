@@ -18,6 +18,7 @@ LSP = Longest Shortest Path to START at the current vertex
 InDegree is the sum of the weights of all incoming edges (weight = 1 for unweighted)
 OutDegree is the sum of the weights of all outgoing edges (weight = 1 for unweighted)
 ClosenessCentrality is the average path length to all vertices from the chosen vertex
+Betweenness Centrality is the number of shortest paths that go through the chosen vertex
 
 PathLength is a little tricky and requires knowledge of how we are storing these to
 understand. Basically, all verteces will be stored in an array and sorted alphabetically.
@@ -46,12 +47,14 @@ of i in the array of all vertices.
     string DU_LSP_EndNode;
     int DU_PathLength(547);
     int DU_ClosenessCentrality;
+    int DU_BetweennessCentrality;
 
     //statistics on Vertex in an Undirected Unweighted graph
     int UU_LSP_Weight; //again, longest shortest path that STARTS here
     string UU_LSP_EndNode;
     int UU_PathLength(547);
     int UU_ClosenessCentrality;
+    int UU_BetweennessCentrality;
 };
 
 #endif // VERTEX_H
