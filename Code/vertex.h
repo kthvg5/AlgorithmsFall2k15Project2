@@ -7,7 +7,6 @@ using namespace std;
 #include <iostream>
 
 class Vertex{
-public;
 /*
 Key to reading veriable names:
 DW = Directed Weighted
@@ -25,6 +24,7 @@ understand. Basically, all verteces will be stored in an array and sorted alphab
 PathLength[i] stores the weight of the path from this vertex to the vertex in with an index
 of i in the array of all vertices.
 */
+public;
     string name;
     int index; //yes, this can be gotten, but we only have a week and this is easier.
 
