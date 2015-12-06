@@ -9,7 +9,7 @@ DU = Directed Unweighted
 UU = Undirected Unweighted
 */
 public;
-    int DW, UW, DU, UU;
+    int DW_Parent, DW_Weight, UW_Parent, UW_Weight, DU_Parent, DU_Weight, UU_Parent, UU_Weight;
 };
 
 #endif // PATH_H
