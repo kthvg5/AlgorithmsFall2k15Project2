@@ -55,6 +55,17 @@ public;
     int UU_PathLength(547);
     int UU_ClosenessCentrality;
     int UU_BetweennessCentrality;
+
+    //constructor
+    Vertex();
+
+    //Initial editing
+    void initialize(const int I, const string Bill);
+
+
+
+
+
 };
 
 #endif // VERTEX_H

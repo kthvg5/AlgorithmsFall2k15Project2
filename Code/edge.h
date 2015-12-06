@@ -14,10 +14,14 @@ public;
     string EndVertex;
     int index_Start;
     int index_End;
+    int weight;
     int DU_BetweennessCentrality;
     int UU_BetweennessCentrality;
     float DW_BetweennessCentrality; //Remember, before outputting this we need to devide it by it's weight
     float DU_BetweennessCentrality; //Ditto
+
+    //functions
+
 
 };
 #endif // EDGE_H
