@@ -26,8 +26,22 @@ public;
     float UW_BetweennessCentrality; //Ditto
     bool DW_Frontier, DW_Solution, DW_Removed, UW_Frontier, UW_Solution, UW_Removed; //bools for dijkstra
     bool DU_Removed, UU_Removed; //bools for BFS
+
     //functions
 
+    //construstor
+    Edge();
+
+
+    //Traversal functions
+    void DW_Traverce();
+    void DU_Traverce(Vertex starts_at);
+    void UW_Traverce();
+    void UU_Traverce(Vertex starts_at);
+
+    //function that takes a directed adjacency matrix and makes it into an
+    //undirected adjacency matrix, but only the top right half along the diagonal.
+    void undirect(Edge matrix[][]);
 
 };
 #endif // EDGE_H
