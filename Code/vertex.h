@@ -3,7 +3,7 @@
 using namespace std;
 
 #include <fstream>
-#include <string>>
+#include <string>
 #include <iostream>
 
 class Vertex{
@@ -48,6 +48,7 @@ public;
     int DU_PathLength(547);
     int DU_ClosenessCentrality;
     int DU_BetweennessCentrality;
+    bool DU_Found;
 
     //statistics on Vertex in an Undirected Unweighted graph
     int UU_LSP_Weight; //again, longest shortest path that STARTS here
@@ -55,6 +56,7 @@ public;
     int UU_PathLength(547);
     int UU_ClosenessCentrality;
     int UU_BetweennessCentrality;
+    bool UU_Found;
 
     //constructor
     Vertex();
@@ -62,6 +64,9 @@ public;
     //Initial editing
     void initialize(const int I, const string Bill);
 
+    //cross through functions (called when a path goes through a node)
+    void DU_Cross();
+    void UU_Cross();
 
 
 
