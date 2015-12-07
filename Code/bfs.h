@@ -13,3 +13,4 @@ void directed_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][]);
 void undirected_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][]);
 
 #endif //BFS_H
+
