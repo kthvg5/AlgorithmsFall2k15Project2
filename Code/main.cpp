@@ -1,4 +1,4 @@
-
+#include "fucntions.h"
 /*
 FIRST THINGS FIRST, an explanation of what the plan is for when I'm working on this
 later. As with all great plans, this is subject to change (especially the names).
