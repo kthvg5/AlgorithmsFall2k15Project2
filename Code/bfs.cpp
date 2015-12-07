@@ -1,8 +1,4 @@
-#include <iostream>
-#include <queue>
-#include <string>
-using namespace std;
-
+#include "bfs.h"
 
 void directed_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
 {
