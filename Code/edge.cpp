@@ -6,7 +6,7 @@ Edge::Edge(){
     index_Start = -1;
     index_End = -1;
     Dweight = -1;
-    Uweight = 0;
+    Uweight = -1;
     DU_BetweennessCentrality = 0;
     UU_BetweennessCentrality = 0;
     DW_BetweennessCentrality = 0;

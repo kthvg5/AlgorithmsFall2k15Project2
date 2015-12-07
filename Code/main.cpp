@@ -42,3 +42,46 @@ as well would count.
 
 At verious points through this we will be outputting some information so that we can make graphs out of it later.
 */
+int main(){
+    const int NUM_VERTEX = 547;
+    const int NUM_EDGE = 1957;
+    Edge RBM[NUM_EDGE];
+    Edge Edgey[NUM_VERTEX][NUM_VERTEX];
+    Vertex Vertical[NUM_VERTEX];
+    Path theWay[NUM_VERTEX][NUM_VERTEX];
+
+    //setting up arrays and matrixes
+    edgeArrayInit(RBM, NUM_EDGE);
+    vertArrayInit(Vertical, NUM_EDGE, RBM);
+    redPill(Edgey, RBM, Vertical, NUM_EDGE);
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
