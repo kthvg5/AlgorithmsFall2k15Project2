@@ -1,5 +1,11 @@
 #ifndef PATH_H
 #define PATH_H
+
+using namespace std;
+
+#include <fstream>
+#include <string>
+#include <iostream>
 class Path{
 /*
 Key to reading veriable names:

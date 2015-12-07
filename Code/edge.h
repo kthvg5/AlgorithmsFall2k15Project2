@@ -39,9 +39,6 @@ public;
     void UW_Traverce();
     void UU_Traverce(Vertex starts_at);
 
-    //function that takes a directed adjacency matrix and makes it into an
-    //undirected adjacency matrix, but only the top right half along the diagonal.
-    void undirect(Edge matrix[][]);
 
 };
 #endif // EDGE_H

@@ -42,7 +42,7 @@ void Path::DU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex
         return;
     else
     {
-        matrix[parents[from][to]][to].traverse();
+        matrix[parents[from][to]][to].traverse(start);
         path.DU_GoHome(matrix, from, parents[from][to], parents, start);
     }
     return;

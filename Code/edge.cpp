@@ -41,39 +41,3 @@ void Edge::UU_Traverse(Vertex starts_at){
     starts_at.DU_Cross();
     return;
 }
-
-void Edge::undirect(Edge matrix[][]){
-    for(int i = 0; i < 547; i++)
-    {
-        for(int j = i; j < 547; j++)
-        {
-            if (matrix[i][j].Dweight == int.max)
-                matrix[i][j].Uweight = matrix[j][i].Dweight;
-            else
-                matrix[i][j].Uweight = matrix[i][j].Dweight+matrix[j][i].Dweight;
-        }
-    }
-    return;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
