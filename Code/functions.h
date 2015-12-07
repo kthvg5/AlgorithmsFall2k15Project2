@@ -4,6 +4,10 @@ using namespace std;
 #include <string>
 #include <iostream>
 
+#include "edge.h"
+#include "path.h"
+#include "vertex.h"
+
 
 //function that takes a directed adjacency matrix and makes it into an
 //undirected adjacency matrix, but only the top right half along the diagonal.

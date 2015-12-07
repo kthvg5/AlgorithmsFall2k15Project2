@@ -21,7 +21,7 @@ void edgeArrayInit(Edge RBM[], int num_edges){
         getline(cin, RBM[i].to, ',');//also a comma
         getline(cin, RBM[i].weight, '\n'); //not a comma
     }
-    edgeSort(RBM[], 0, num_edges);
+    edgeSort(RBM, 0, num_edges);
     return;
 }
 
@@ -69,8 +69,7 @@ void vertArrayInit(Vertex vert[], int num_edges, Edge RBM[]) {
     return;
 }
 
-void DW_GoHome(Edge matrix[][], int from, int to, Path parents[][]);
-{
+void DW_GoHome(Edge matrix[][], int from, int to, Path parents[][]){
     if(from == to)
         return;
     else
@@ -81,8 +80,7 @@ void DW_GoHome(Edge matrix[][], int from, int to, Path parents[][]);
     return;
 }
 
-void UW_GoHome(Edge matrix[][], int from, int to, Path parents[][]);
-{
+void UW_GoHome(Edge matrix[][], int from, int to, Path parents[][]){
     if(from == to)
         return;
     else
@@ -93,8 +91,7 @@ void UW_GoHome(Edge matrix[][], int from, int to, Path parents[][]);
     return;
 }
 
-void DU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start);
-{
+void DU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start){
     if(from == to)
         return;
     else
@@ -105,8 +102,7 @@ void DU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start
     return;
 }
 
-void UU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start);
-{
+void UU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start){
     if(from == to)
         return;
     else
@@ -135,9 +131,9 @@ int VertexSearch (Vertex vertical[], int left, int right, string name){
     if (vertical[middle].name == name)
         return middle;
     else if (vertical[middle].name > name)
-        return VertexSearch(vertical[], middle, right, name);
+        return VertexSearch(vertical, middle, right, name);
     else
-        return VertexSearch(vertical[], left, middle, name);
+        return VertexSearch(vertical, left, middle, name);
 }
 
 
