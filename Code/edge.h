@@ -13,7 +13,7 @@ UW = Undirected Weighted
 DU = Directed Unweighted
 UU = Undirected Unweighted
 */
-public;
+public:
     string StartVertex;
     string EndVertex;
     int index_Start;

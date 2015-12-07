@@ -14,7 +14,7 @@ UW = Undirected Weighted
 DU = Directed Unweighted
 UU = Undirected Unweighted
 */
-public;
+public:
     int DW_Parent, DW_Weight, UW_Parent, UW_Weight, DU_Parent, DU_Weight, UU_Parent, UU_Weight;
 
     //constructor
