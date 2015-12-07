@@ -4,9 +4,7 @@
 #include <iostream>
 #include <string>
 #include <queue>
-#include "edge.h"
-#include "path.h"
-#include "vertex.h"
+#include "function.h"
 
 using namespace std;
 
