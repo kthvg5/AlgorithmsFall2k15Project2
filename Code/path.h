@@ -20,11 +20,6 @@ public:
     //constructor
     Path();
 
-    //traverse the path back home
-    void DW_GoHome(Edge matrix[][], int from, int to, Path parents[][]);
-    void UW_GoHome(Edge matrix[][], int from, int to, Path parents[][]);
-    void DU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start);
-    void UU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start);
 };
 
 #endif // PATH_H

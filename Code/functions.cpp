@@ -117,9 +117,22 @@ void UU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start
     return;
 }
 
+void redPill(Edge matrix[][], Edge RBM[], Vertex vertical[]){ //NOT DONE YET!!!
 
+    return;
+}
 
-
+int VertexSearch (Vertex vertical[], int left, int right, string name){
+    int middle = (left+right)/2;
+    if (vertical[middle].name == name)
+    {
+        return middle;
+    }
+    else if (vertical[middle].name > name)
+        return VertexSearch(vertical[], middle, right, name);
+    else
+        return VertexSearch(vertical[], left, middle, name);
+}
 
 
 

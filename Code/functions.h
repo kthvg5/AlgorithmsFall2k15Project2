@@ -24,3 +24,13 @@ void DW_GoHome(Edge matrix[][], int from, int to, Path parents[][]);
 void UW_GoHome(Edge matrix[][], int from, int to, Path parents[][]);
 void DU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start);
 void UU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start);
+
+//takes an array of edges and places them into the array
+//pass in: edge array, edge matrix, and path array
+//yes this is a reference to The Matrix
+void redPill(Edge matrix[][], Edge RBM[], Vertex vertical[]);
+
+//binary search implimented for our nodes.
+//takes in Vertex array and a string Name.
+//returns int value of index. Sorry Morales, no Pointers
+int VertexSearch (Vertex vertical[], int left, int right, string name);
