@@ -117,17 +117,23 @@ void UU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start
     return;
 }
 
-void redPill(Edge matrix[][], Edge RBM[], Vertex vertical[]){ //NOT DONE YET!!!
-
+void redPill(Edge matrix[][], Edge RBM[], Vertex vertical[], int num_edge){ //NOT DONE YET!!!
+    int from, to;
+    for(int i = 0; i < num_edge; i++)
+    {
+        from = VertexSearch(vertical, 0, num_edge, RBM[i].StartVertex);
+        to = VertexSearch(vertical, 0, num_edge, RBM[i].EndVertex);
+        matrix[from][to] = RBM[i];
+        matrix[from][to].index_Start = from;
+        matrix[from][to].index_End = to;
+    }
     return;
 }
 
 int VertexSearch (Vertex vertical[], int left, int right, string name){
     int middle = (left+right)/2;
     if (vertical[middle].name == name)
-    {
         return middle;
-    }
     else if (vertical[middle].name > name)
         return VertexSearch(vertical[], middle, right, name);
     else

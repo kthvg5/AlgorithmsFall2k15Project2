@@ -28,7 +28,7 @@ void UU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start
 //takes an array of edges and places them into the array
 //pass in: edge array, edge matrix, and path array
 //yes this is a reference to The Matrix
-void redPill(Edge matrix[][], Edge RBM[], Vertex vertical[]);
+void redPill(Edge matrix[][], Edge RBM[], Vertex vertical[], int num_edge);
 
 //binary search implimented for our nodes.
 //takes in Vertex array and a string Name.
