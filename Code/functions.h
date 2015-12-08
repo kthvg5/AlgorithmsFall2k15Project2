@@ -52,9 +52,12 @@ void DU_ComunismEdgeSort(Edge arr[], int left, int right);
 int UU_Comunism(Edge RBM[], int num_edge);
 int DU_Comunism(Edge RBM[], int num_edge);
 
+//takes array and uses it to update matrix. Slightly different from red pill
+//Still a The Matrix joke
+void PurplePill(Edge RBM[], Edge Edgey[][], int num_edges);
 
-
-
+//find the weighted and unweighted in and out degrees of each vertex
+void degreeFinder(Vertex nodesBro[], Edge matrix[][], int num_verts);
 
 
 

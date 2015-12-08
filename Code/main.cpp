@@ -45,6 +45,7 @@ At verious points through this we will be outputting some information so that we
 int main(){
     const int NUM_VERTEX = 547;
     const int NUM_EDGE = 1957;
+    int KickedByUU, KickedByDu;
     Edge RBM[NUM_EDGE];
     Edge Edgey[NUM_VERTEX][NUM_VERTEX];
     Vertex Vertical[NUM_VERTEX];
@@ -57,7 +58,11 @@ int main(){
 
     //dijkstra
     //bfs
+    bluePill(RBM, Edgey, NUM_EDGE);
+    KickedByUU = UU_Comunism(RBM, NUM_EDGE);
+    KickedByDu = DU_Comunism(RBM, NUM_EDGE);
 
+    //BFS
 
     return 0;
 }

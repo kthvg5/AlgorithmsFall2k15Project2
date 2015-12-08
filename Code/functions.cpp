@@ -233,4 +233,50 @@ int DU_Comunism(Edge RBM[], int num_edge) {
     return removed;
 }
 
+void PurplePill(Edge RBM[], Edge Edgey[][], int num_edges) {
+    int from, to;
+    for(int i = 0; i < num_edges; i++)
+    {
+        from = RBM[i].index_Start;
+        to = RBM[i].index_End;
+        Edgey[from][to] = RBM[i];
+    }
+    return;
+}
+
+void degreeFinder(Vertex nodesBro[], Edge matrix[][], int num_verts){
+    for(int i = 0; i < num_verts; i++)
+    {
+        for(int x = 0; x < num_verts; x++)
+        {
+            if(matrix[i][x].Dweight != -1)
+            {
+                nodesBro[i].DW_OutDegree += matrix[i][x].Dweight;
+                nodesBro[i].DU_OutDegree++;
+                nodesBro[x].DW_InDegree += matrix[i][x].Dweight;
+                nodesBro[x].DU_InDegree++;
+            }
+        }
+    }
+    return;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
