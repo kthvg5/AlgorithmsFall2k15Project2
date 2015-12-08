@@ -55,6 +55,8 @@ int main(){
     vertArrayInit(Vertical, NUM_EDGE, RBM);
     redPill(Edgey, RBM, Vertical, NUM_EDGE);
 
+    //dijkstra
+    //bfs
 
 
     return 0;

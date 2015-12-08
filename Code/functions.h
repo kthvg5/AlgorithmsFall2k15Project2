@@ -38,3 +38,26 @@ void redPill(Edge matrix[][], Edge RBM[], Vertex vertical[], int num_edge);
 //takes in Vertex array and a string Name.
 //returns int value of index. Sorry Morales, no Pointers
 int VertexSearch (Vertex vertical[], int left, int right, string name);
+
+//takes a matrix of edges and uses it to update the array
+//yes, this is still a reference ot The Matrix
+void bluePill(Edge RBM[], Edge Edgey[][], int num_edge);
+
+//Sort the edge array in decending order with respect to
+//UU_Betweeness and DU_Betweeness respectivly
+void UU_ComunismEdgeSort(Edge arr[], int left, int right);
+void DU_ComunismEdgeSort(Edge arr[], int left, int right);
+
+//removes the edges that have one of the five highest betweenness centralities
+int UU_Comunism(Edge RBM[], int num_edge);
+int DU_Comunism(Edge RBM[], int num_edge);
+
+
+
+
+
+
+
+
+
+

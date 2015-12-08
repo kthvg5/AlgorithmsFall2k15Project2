@@ -47,9 +47,9 @@ void edgeSort(Edge arr[], int left, int right) {
 
       /* recursion */
       if (left < j)
-            quickSort(arr, left, j);
+            edgeSort(arr, left, j);
       if (i < right)
-            quickSort(arr, i, right);
+            edgeSort(arr, i, right);
     return;
 }
 
@@ -136,9 +136,101 @@ int VertexSearch (Vertex vertical[], int left, int right, string name){
         return VertexSearch(vertical, left, middle, name);
 }
 
+void bluePill(Edge RBM[], Edge Edgey[][], int num_edge){
+    int from to;
+    for (int i = 0; i < num_edge; i++)
+    {
+        from = RBM[i].index_Start;
+        to = RBM[i].index_End;
+        RBM[i] = Edgey[from][to];
+    }
+    return;
+}
 
+void UU_ComunismEdgeSort(Edge arr[], int left, int right) {
+      int i = left, j = right;
+      Edge tmp;
+      int pivot = arr[(left + right) / 2].UU_BetweennessCentrality;
 
+      /* partition */
+      while (i <= j) {
+            while (arr[i].StartVertex > pivot)
+                  i++;
+            while (arr[j].StartVertex < pivot)
+                  j--;
+            if (i <= j) {
+                  tmp = arr[i];
+                  arr[i] = arr[j];
+                  arr[j] = tmp;
+                  i++;
+                  j--;
+            }
+      };
 
+      /* recursion */
+      if (left < j)
+            UU_ComunismEdgeSort(arr, left, j);
+      if (i < right)
+            UU_ComunismEdgeSort(arr, i, right);
+    return;
+}
 
+void DU_ComunismEdgeSort(Edge arr[], int left, int right) {
+      int i = left, j = right;
+      Edge tmp;
+      int pivot = arr[(left + right) / 2].DU_BetweennessCentrality;
+
+      /* partition */
+      while (i <= j) {
+            while (arr[i].StartVertex > pivot)
+                  i++;
+            while (arr[j].StartVertex < pivot)
+                  j--;
+            if (i <= j) {
+                  tmp = arr[i];
+                  arr[i] = arr[j];
+                  arr[j] = tmp;
+                  i++;
+                  j--;
+            }
+      };
+
+      /* recursion */
+      if (left < j)
+            DU_ComunismEdgeSort(arr, left, j);
+      if (i < right)
+            DU_ComunismEdgeSort(arr, i, right);
+    return;
+}
+
+int UU_Comunism(Edge RBM[], int num_edge) {
+    int removed = 0, Max = 0;
+    UU_ComunismEdgeSort(RBM, 0, num_edge);
+    for(int i = 0; i < 5; i++)
+    {
+        Max = RBM[removed].UU_BetweennessCentrality;
+        while(RBM[removed].UU_BetweennessCentrality == Max)
+        {
+            RBM[removed].UU_Removed = true;
+            removed++;
+        };
+    }
+    return removed;
+}
+
+int DU_Comunism(Edge RBM[], int num_edge) {
+    int removed = 0, Max = 0;
+    DU_ComunismEdgeSort(RBM, 0, num_edge);
+    for(int i = 0; i < 5; i++)
+    {
+        Max = RBM[removed].DU_BetweennessCentrality;
+        while(RBM[removed].DU_BetweennessCentrality == Max)
+        {
+            RBM[removed].DU_Removed = true;
+            removed++;
+        };
+    }
+    return removed;
+}
 
 
