@@ -18,7 +18,7 @@ void directed_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < 547; s++){
-                if(2d_edge.Dweight[x][s] != -1 && Vertex[s].found == false)
+                if(2d_edge.Dweight[x][s] != -1 && 2d_edge.UU_removed != true && Vertex[s].found == false)
                     parent = front;
                     path.push(s);
                     Vertex[s].DU_Found = true;
@@ -49,7 +49,7 @@ void undirected_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < 547; s++){
-                if(2d_edge.Uweight[x][s] != -1 && Vertex[s].found == false)
+                if(2d_edge.Uweight[x][s] != -1 && 2d_edge.UU_removed != true && Vertex[s].found == false)
                     parent = front;
                     path.push(s);
                     Vertex[s].UU_Found = true;
