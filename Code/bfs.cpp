@@ -8,7 +8,7 @@ void directed_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
 
     //Iterate through the entire vertex array and find all BFS
     for(int x = 0, x < vertices; x++){
-        int front = x;
+        int from = x;
 
         //Creating the queue, place starting element into the queue
         queue<Vertex> path;
@@ -20,13 +20,14 @@ void directed_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < vertices; s++){
-                if(2d_edge.Dweight[x][s] != -1 && 2d_edge.UU_removed != true && Vertex[s].found == false)
-                    parent = front;
+                if(2d_edge.Dweight[from][s] != -1 && 2d_edge.UU_removed != true && Vertex[s].found == false){
+                    parent = path.front();
                     path.push(s);
                     Vertex[s].DU_Found = true;
-                    2d_path[x][s].DU_Parent = front;
-                    2d_path[x][s].DU_Weight = 2d_path[x][front] + 1;
-                    2d_path[x][s].DU_GoHome(Edge 2d_edge[][], int x, int s, Path 2d_path[][], int parent);
+                    2d_path[x][s].DU_Parent = from;
+                    2d_path[x][s].DU_Weight = 2d_path[from][s] + 1;
+                    2d_path[x][s].DU_GoHome(Edge 2d_edge[][], int from, int s, Path 2d_path[][], int parent);
+                }
             }
             path.pop();
         }
@@ -43,7 +44,7 @@ void undirected_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
 
     //Iterate through the entire vertex array and find all BFS
     for(int x = 0, x < vertices; x++){
-        int front = x;
+        int from = x;
 
         //Creating the queue, place starting element into the queue
         queue<Vertex> path;
@@ -55,13 +56,14 @@ void undirected_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < vertices; s++){
-                if(2d_edge.Uweight[x][s] != -1 && 2d_edge.UU_removed != true && Vertex[s].found == false)
-                    parent = front;
+                if(2d_edge.Uweight[from][s] != -1 && 2d_edge.UU_removed != true && Vertex[s].found == false){
+                    parent = path.front();
                     path.push(s);
                     Vertex[s].UU_Found = true;
-                    2d_path[x][s].UU_Parent = front;
-                    2d_path[x][s].UU_Weight = 2d_path[x][front] + 1;
-                    2d_path[x][s].UU_GoHome(Edge 2d_edge[][], int x, int s, Path 2d_path[][], int parent);
+                    2d_path[x][s].UU_Parent = from;
+                    2d_path[x][s].UU_Weight = 2d_path[from][s] + 1;
+                    2d_path[x][s].UU_GoHome(Edge 2d_edge[][], int from, int s, Path 2d_path[][], int parent);
+                }
             }
             path.pop();
         }
