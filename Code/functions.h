@@ -24,6 +24,7 @@ void edgeSort(Edge arr[], int left, int right);
 void vertArrayInit(Vertex vert[], int num_edges, Edge RBM[]);
 
 //traverse the path back home
+//from is start of path. to is end of path
 void DW_GoHome(Edge matrix[][], int from, int to, Path parents[][]);
 void UW_GoHome(Edge matrix[][], int from, int to, Path parents[][]);
 void DU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start);
