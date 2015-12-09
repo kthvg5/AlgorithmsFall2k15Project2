@@ -8,9 +8,11 @@ Vertex::Vertex(){
     DW_OutDegree = 0;
     DW_LSP_Weight = 0;
     DW_LSP_EndNode =NULL;
+    DW_Solution = false;
 
     UW_LSP_Weight = 0;
     UW_LSP_EndNode = NULL;
+    DU_Solution = false;
 
     DU_InDegree = 0;
     DU_OutDegree = 0;

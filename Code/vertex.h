@@ -34,11 +34,13 @@ public:
     int DW_LSP_Weight; //Stores the weight of the LSP to start from this vertex
     string DW_LSP_EndNode;//Stores the endnode of that path
     int DW_PathLength(547);
+    bool DW_Solution;
 
     //statistics on Undirected Weighted
     int UW_LSP_Weight;
     string UW_LSP_EndNode;
     int UW_PathLength(547);
+    bool DW_Soluttion;
 
     //statistics on the Directed Unweighted graph
     int DU_InDegree;
