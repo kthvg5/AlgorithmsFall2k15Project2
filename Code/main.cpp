@@ -1,4 +1,6 @@
 #include "functions.h"
+#include "Dijkstra.h"
+#include "bfs.h"
 /*
 FIRST THINGS FIRST, an explanation of what the plan is for when I'm working on this
 later. As with all great plans, this is subject to change (especially the names).
@@ -20,7 +22,7 @@ notes to know before reading our steps:
     These verteces should be in alphabetic order.
     When making these verteces, update RBM.StartIndex
 4) Run through RBM getting the EndIndex (or whatever we end up calling it) using a binary search of Vertical
-5) Create a matrix for the edges (lets call it Edgey to describe how the class makes some students feel)
+5) Create a matrix for the edges (lets call it Edgy to describe how the class makes some students feel)
     Populate it by going through RBM and coppieng each entry into the proper location (based on the StartIndex and EndIndex)
     This is, in practice, just an adjacency matrix.
     As it populates, it will also update the verices InDegree and OutDegree.
@@ -43,22 +45,31 @@ as well would count.
 At verious points through this we will be outputting some information so that we can make graphs out of it later.
 */
 int main(){
+    //declare consts and veriables
     const int NUM_VERTEX = 547;
     const int NUM_EDGE = 1957;
     int KickedByUU, KickedByDu;
     Edge RBM[NUM_EDGE];
-    Edge Edgey[NUM_VERTEX][NUM_VERTEX];
+    Edge Edgy[NUM_VERTEX][NUM_VERTEX];
     Vertex Vertical[NUM_VERTEX];
     Path theWay[NUM_VERTEX][NUM_VERTEX];
+
+    //find stats required for assignment
+    degreeFinder(Vertical, Edgy, NUM_VERTEX);
 
     //setting up arrays and matrixes
     edgeArrayInit(RBM, NUM_EDGE);
     vertArrayInit(Vertical, NUM_EDGE, RBM);
-    redPill(Edgey, RBM, Vertical, NUM_EDGE);
+    redPill(Edgy, RBM, Vertical, NUM_EDGE);
 
     //dijkstra
+    DW_dijkstra(theWay,Vertical, Edgy, NUM_VERTEX);
+    UW_dijkstra(theWay, Vertical, Edgy, NUM_VERTEX);
     //bfs
-    bluePill(RBM, Edgey, NUM_EDGE);
+    directed_BFS(RBM, Edgy, theWay);
+    undirected_BFS(RBM, Edgy, theWay);
+
+    bluePill(RBM, Edgy, NUM_EDGE);
     KickedByUU = UU_Comunism(RBM, NUM_EDGE);
     KickedByDu = DU_Comunism(RBM, NUM_EDGE);
 
@@ -66,29 +77,10 @@ int main(){
 
     return 0;
 }
+/*things to do in gephi:
+    Find maximum in and out degrees
+    Find maximum betweenesses for weighted edges
+    Other verious queries that we decide we want to have given
+        to us on a silver platter
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/

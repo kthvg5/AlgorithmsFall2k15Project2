@@ -136,13 +136,13 @@ int VertexSearch (Vertex vertical[], int left, int right, string name){
         return VertexSearch(vertical, left, middle, name);
 }
 
-void bluePill(Edge RBM[], Edge Edgey[][], int num_edge){
+void bluePill(Edge RBM[], Edge Edgy[][], int num_edge){
     int from to;
     for (int i = 0; i < num_edge; i++)
     {
         from = RBM[i].index_Start;
         to = RBM[i].index_End;
-        RBM[i] = Edgey[from][to];
+        RBM[i] = Edgy[from][to];
     }
     return;
 }
@@ -233,13 +233,13 @@ int DU_Comunism(Edge RBM[], int num_edge) {
     return removed;
 }
 
-void PurplePill(Edge RBM[], Edge Edgey[][], int num_edges) {
+void PurplePill(Edge RBM[], Edge Edgy[][], int num_edges) {
     int from, to;
     for(int i = 0; i < num_edges; i++)
     {
         from = RBM[i].index_Start;
         to = RBM[i].index_End;
-        Edgey[from][to] = RBM[i];
+        Edgy[from][to] = RBM[i];
     }
     return;
 }

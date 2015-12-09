@@ -42,7 +42,7 @@ int VertexSearch (Vertex vertical[], int left, int right, string name);
 
 //takes a matrix of edges and uses it to update the array
 //yes, this is still a reference ot The Matrix
-void bluePill(Edge RBM[], Edge Edgey[][], int num_edge);
+void bluePill(Edge RBM[], Edge Edgy[][], int num_edge);
 
 //Sort the edge array in decending order with respect to
 //UU_Betweeness and DU_Betweeness respectivly
@@ -50,18 +50,14 @@ void UU_ComunismEdgeSort(Edge arr[], int left, int right);
 void DU_ComunismEdgeSort(Edge arr[], int left, int right);
 
 //removes the edges that have one of the five highest betweenness centralities
+//returns an int equal to the number of edges removed.
 int UU_Comunism(Edge RBM[], int num_edge);
 int DU_Comunism(Edge RBM[], int num_edge);
 
 //takes array and uses it to update matrix. Slightly different from red pill
 //Still a The Matrix joke
-void PurplePill(Edge RBM[], Edge Edgey[][], int num_edges);
+void PurplePill(Edge RBM[], Edge Edgy[][], int num_edges);
 
 //find the weighted and unweighted in and out degrees of each vertex
 void degreeFinder(Vertex nodesBro[], Edge matrix[][], int num_verts);
-
-
-
-
-
 
