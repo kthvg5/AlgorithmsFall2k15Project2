@@ -28,13 +28,6 @@ Vertex::Vertex(){
     UU_BetweennessCentrality = 0;
     UU_Found = false;
 
-    for(int i = 0; i < 547; i++)
-    {
-        DW_PathLength[i] = int.max;
-        DU_PathLength[i] = int.max;
-        UW_PathLength[i] = int.max;
-        UU_PathLength[i] = int.max;
-    }
 }
 
 void Vertex::initialize(const int I, const string Bill){

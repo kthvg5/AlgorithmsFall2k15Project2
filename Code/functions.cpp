@@ -261,6 +261,41 @@ void degreeFinder(Vertex nodesBro[], Edge matrix[][], int num_verts){
     return;
 }
 
+void LSP(Path wayHome[][], int num_verts, Vertex Nodes[])
+{
+    int DW_Max = -1, DU_Max = -1, UW_Max = -1, UU_Max = -1;
+    for (int from = 0; from < num_verts; from++)
+    {
+        for(int to = 0; to < num_verts; to++)
+        {
+            if(wayHome[from][to].DU_Weight > DU_Max)
+            {
+                DU_Max = wayHome[from][to].DU_Weight;
+                Nodes[from].DU_LSP_EndNode = Nodes[to].name;
+            }
+            if(wayHome[from][to].UU_Weight > UU_Max)
+            {
+                UU_Max = wayHome[from][to].UU_Weight;
+                Nodes[from].UU_LSP_EndNode = Nodes[to].name;
+            }
+            if(wayHome[from][to].DW_Weight > DW_Max)
+            {
+                DW_Max = wayHome[from][to].DW_Weight;
+                Nodes[from].DW_LSP_EndNode = Nodes[to].name;
+            }
+            if(wayHome[from][to].UW_Weight > UW_Max)
+            {
+                UW_Max = wayHome[from][to].UW_Weight;
+                Nodes[from].UW_LSP_EndNode = Nodes[to].name;
+            }
+        }
+        DW_Max = -1;
+        DU_Max = -1;
+        UW_Max = -1;
+        UU_Max = -1;
+    }
+    return;
+}
 
 
 

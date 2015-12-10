@@ -79,6 +79,7 @@ int main(){
 }
 /*things to do in gephi:
     Find maximum in and out degrees
+        Weighted in:
     Find maximum betweenesses for weighted edges
     Other verious queries that we decide we want to have given
         to us on a silver platter

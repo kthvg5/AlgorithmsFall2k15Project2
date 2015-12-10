@@ -61,3 +61,33 @@ void PurplePill(Edge RBM[], Edge Edgy[][], int num_edges);
 //find the weighted and unweighted in and out degrees of each vertex
 void degreeFinder(Vertex nodesBro[], Edge matrix[][], int num_verts);
 
+//Finds LSP weight and name for each node
+//NOTE: this does not print that out. It just sets the values in each node
+void LSP(Path wayHome[][], int num_verts, Vertex Nodes[]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

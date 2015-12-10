@@ -33,13 +33,11 @@ public:
     int DW_OutDegree;
     int DW_LSP_Weight; //Stores the weight of the LSP to start from this vertex
     string DW_LSP_EndNode;//Stores the endnode of that path
-    int DW_PathLength(547);
     bool DW_Solution;
 
     //statistics on Undirected Weighted
     int UW_LSP_Weight;
     string UW_LSP_EndNode;
-    int UW_PathLength(547);
     bool DW_Soluttion;
 
     //statistics on the Directed Unweighted graph
@@ -47,7 +45,6 @@ public:
     int DU_OutDegree;
     int DU_LSP_Weight;
     string DU_LSP_EndNode;
-    int DU_PathLength(547);
     int DU_ClosenessCentrality;
     int DU_BetweennessCentrality;
     bool DU_Found;
@@ -55,7 +52,6 @@ public:
     //statistics on Vertex in an Undirected Unweighted graph
     int UU_LSP_Weight; //again, longest shortest path that STARTS here
     string UU_LSP_EndNode;
-    int UU_PathLength(547);
     int UU_ClosenessCentrality;
     int UU_BetweennessCentrality;
     bool UU_Found;
@@ -69,10 +65,6 @@ public:
     //cross through functions (called when a path goes through a node)
     void DU_Cross();
     void UU_Cross();
-
-
-
-
 };
 
 #endif // VERTEX_H
