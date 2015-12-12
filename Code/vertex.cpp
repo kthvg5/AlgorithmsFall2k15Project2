@@ -12,7 +12,7 @@ Vertex::Vertex(){
 
     UW_LSP_Weight = 0;
     UW_LSP_EndNode = NULL;
-    DU_Solution = false;
+    UW_Solution = false;
 
     DU_InDegree = 0;
     DU_OutDegree = 0;
@@ -45,7 +45,5 @@ void Vertex::UU_Cross(){
     UU_BetweennessCentrality++;
     return;
 }
-
-void
 
 
