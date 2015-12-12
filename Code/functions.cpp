@@ -1,6 +1,6 @@
 #include "functions.h"
 
-void undirect(Edge matrix[][]){
+void undirect(Edge matrix[][547]){
     for(int i = 0; i < 547; i++)
     {
         for(int j = i; j < 547; j++)
@@ -69,7 +69,7 @@ void vertArrayInit(Vertex vert[], int num_edges, Edge RBM[]) {
     return;
 }
 
-void DW_GoHome(Edge matrix[][], int from, int to, Path parents[][]){
+void DW_GoHome(Edge matrix[][547], int from, int to, Path parents[][547]){
     if(from == to)
         return;
     else
@@ -80,7 +80,7 @@ void DW_GoHome(Edge matrix[][], int from, int to, Path parents[][]){
     return;
 }
 
-void UW_GoHome(Edge matrix[][], int from, int to, Path parents[][]){
+void UW_GoHome(Edge matrix[][547], int from, int to, Path parents[][547]){
     if(from == to)
         return;
     else
@@ -91,7 +91,7 @@ void UW_GoHome(Edge matrix[][], int from, int to, Path parents[][]){
     return;
 }
 
-void DU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start){
+void DU_GoHome(Edge matrix[][547], int from, int to, Path parents[][547], Vertex start){
     if(from == to)
         return;
     else
@@ -102,7 +102,7 @@ void DU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start
     return;
 }
 
-void UU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start){
+void UU_GoHome(Edge matrix[][547], int from, int to, Path parents[][547], Vertex start){
     if(from == to)
         return;
     else
@@ -113,7 +113,7 @@ void UU_GoHome(Edge matrix[][], int from, int to, Path parents[][], Vertex start
     return;
 }
 
-void redPill(Edge matrix[][], Edge RBM[], Vertex vertical[], int num_edge){ //NOT DONE YET!!!
+void redPill(Edge matrix[][547], Edge RBM[], Vertex vertical[], int num_edge){ //NOT DONE YET!!!
     int from, to;
     for(int i = 0; i < num_edge; i++)
     {
@@ -136,7 +136,7 @@ int VertexSearch (Vertex vertical[], int left, int right, string name){
         return VertexSearch(vertical, left, middle, name);
 }
 
-void bluePill(Edge RBM[], Edge Edgy[][], int num_edge){
+void bluePill(Edge RBM[], Edge Edgy[][547], int num_edge){
     int from to;
     for (int i = 0; i < num_edge; i++)
     {
@@ -233,7 +233,7 @@ int DU_Comunism(Edge RBM[], int num_edge) {
     return removed;
 }
 
-void PurplePill(Edge RBM[], Edge Edgy[][], int num_edges) {
+void PurplePill(Edge RBM[], Edge Edgy[][547], int num_edges) {
     int from, to;
     for(int i = 0; i < num_edges; i++)
     {
@@ -244,7 +244,7 @@ void PurplePill(Edge RBM[], Edge Edgy[][], int num_edges) {
     return;
 }
 
-void degreeFinder(Vertex nodesBro[], Edge matrix[][], int num_verts){
+void degreeFinder(Vertex nodesBro[], Edge matrix[][547], int num_verts){
     for(int i = 0; i < num_verts; i++)
     {
         for(int x = 0; x < num_verts; x++)
@@ -261,7 +261,7 @@ void degreeFinder(Vertex nodesBro[], Edge matrix[][], int num_verts){
     return;
 }
 
-void LSP(Path wayHome[][], int num_verts, Vertex Nodes[]){
+void LSP(Path wayHome[][547], int num_verts, Vertex Nodes[]){
     int DW_Max = -1, DU_Max = -1, UW_Max = -1, UU_Max = -1;
     for (int from = 0; from < num_verts; from++)
     {
@@ -372,7 +372,7 @@ const int weightless_in, const int weightless_out, const int num_verts){
     return;
 }
 
-void ShortestPathDistroPrint(Path wayHome[][], const int num_verts, Vertex Nodes[]){
+void ShortestPathDistroPrint(Path wayHome[][547], const int num_verts, Vertex Nodes[]){
     int DMax = 0, UMax = 0;
     for(int from = 0; from < num_verts; from++)
     {
@@ -390,7 +390,7 @@ void ShortestPathDistroPrint(Path wayHome[][], const int num_verts, Vertex Nodes
 }
 
 
-void UndirectedPathDistributionOutput(Path wayHome[][], const int num_verts,
+void UndirectedPathDistributionOutput(Path wayHome[][547], const int num_verts,
 Vertex Nodes[], const int UMax){
     int Distro[UMax+1] = {0};
     for (int from = 0; from < num_verts; from++)
@@ -415,7 +415,7 @@ Vertex Nodes[], const int UMax){
 }
 
 
-void DirectedPathDistributionOutput(Path wayHome[][], const int num_verts,
+void DirectedPathDistributionOutput(Path wayHome[][547], const int num_verts,
 Vertex Nodes[], const int DMax){
     int Distro[DMax+1] = {0};
     for (int from = 0; from < num_verts; from++)
