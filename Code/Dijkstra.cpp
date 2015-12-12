@@ -40,8 +40,8 @@ void DW_addToSolution(Vertex Node, Edge Matrix[][547], int num_verts, int from){
     Node.DW_Solution = true;
     for (int i = 0; i < num_verts; i++)
     {
-        Matrix[i][Node.index].DW_Solution = True;
-        Matrix[Node.index][i].DW_Frontier = True;
+        Matrix[i][Node.index].DW_Solution = true;
+        Matrix[Node.index][i].DW_Frontier = true;
     }
     return;
 }
