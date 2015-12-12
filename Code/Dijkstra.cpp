@@ -17,7 +17,7 @@ void DW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int nu
                     {
                         if(Matrix[from][to].Dweight !=-1)   //since the agerage node has
                         {   //like four edges going out of it, this should also cut some time. (note, weight of -1 indicates no edge)
-                            if(Matrix[from][to].Dweight + Path[from][to].weight < bestWeight//checks if weight is better than current
+                            if((Matrix[from][to].Dweight + Path[from][to].weight) < bestWeight//checks if weight is better than current
                             && Matrix[from][to].DW_Solution == false   //makes sure this isnt an edge we already got
                             && Matrix[from][to].DW_Frontier == true)   //makes sure this edge is one we are able to get
                             {
