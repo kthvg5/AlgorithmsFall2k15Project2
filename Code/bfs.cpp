@@ -1,6 +1,6 @@
 #include "bfs.h"
 
-const int vertices = 547
+const int vertices = 547;
 
 void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertices])
 {
