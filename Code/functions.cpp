@@ -261,22 +261,216 @@ void degreeFinder(Vertex nodesBro[], Edge matrix[][], int num_verts){
     return;
 }
 
+void LSP(Path wayHome[][], int num_verts, Vertex Nodes[]){
+    int DW_Max = -1, DU_Max = -1, UW_Max = -1, UU_Max = -1;
+    for (int from = 0; from < num_verts; from++)
+    {
+        for(int to = 0; to < num_verts; to++)
+        {
+            if(wayHome[from][to].DU_Weight > DU_Max)
+            {
+                DU_Max = wayHome[from][to].DU_Weight;
+                Nodes[from].DU_LSP_EndNode = Nodes[to].name;
+            }
+            if(wayHome[from][to].UU_Weight > UU_Max)
+            {
+                UU_Max = wayHome[from][to].UU_Weight;
+                Nodes[from].UU_LSP_EndNode = Nodes[to].name;
+            }
+            if(wayHome[from][to].DW_Weight > DW_Max)
+            {
+                DW_Max = wayHome[from][to].DW_Weight;
+                Nodes[from].DW_LSP_EndNode = Nodes[to].name;
+            }
+            if(wayHome[from][to].UW_Weight > UW_Max)
+            {
+                UW_Max = wayHome[from][to].UW_Weight;
+                Nodes[from].UW_LSP_EndNode = Nodes[to].name;
+            }
+        }
+        DW_Max = -1;
+        DU_Max = -1;
+        UW_Max = -1;
+        UU_Max = -1;
+    }
+    return;
+}
+
+void DegPrint(Vertex Nodes[], const int weight_in, const int weight_out,
+const int weightless_in, const int weightless_out, const int num_verts){
+    int WI[weight_in] = {0};
+    int WO[weight_out] = {0};
+    int UI[weightless_in] = {0};
+    int UO[weightless_out] = {0};
+    int WI_count = 0, WO_count = 0, UI_Count = 0, UO_Count = 0;
+    for(int i = 0; i < num_verts; i++)
+    {
+        WI[Nodes[i].DW_InDegree]++;
+        WO[Nodes[i].DW_OutDegree]++;
+        UI[Nodes[i].DU_InDegree]++;
+        UO[Nodes[i].DU_OutDegree]++;
+        if (Nodes[i].DW_InDegree == weight_in-1)
+            cout << Nodes[i].name << " is tied for max Weighted InDegree." << endl;
+        if (Nodes[i].DW_OutDegree == weight_out-1)
+            cout << Nodes[i].name << " is tied for max Weighted OutDegree." << endl;
+        if (Nodes[i].DU_InDegree == weightless_in-1)
+            cout << Nodes[i].name << " is tied for max Unweighted InDegree." << endl;
+        if (Nodes[i].DU_OutDegree == weightless_in -1)
+            cout << Nodes[i].name << " is tied for max Unweighted Outdegree." << endl;
+    }
+    //printing out
+    //Weight_out
+    for(int i = 0; i < 10; i++)
+    {
+        for(int x = 0; x < (weight_out/10); x++)
+        {
+            WO_count += WO[(weight_out/10)*i+x];
+        }
+        cout << "Number of nodes with weighted out degree between " << i*(weight_out/10) <<
+            " and " << (i+1)*(weight_out/10) << ": " << WI_count << endl;
+        WO_count = 0;
+    }
+
+    //Weight_in
+    for(int i = 0; i < 10; i++)
+    {
+        for(int x = 0; x < (weight_in/10); x++)
+        {
+            WI_count += WI[(weight_in/10)*i+x];
+        }
+        cout << "Number of nodes with weighted in degree between " << i*(weight_in/10) <<
+            " and " << (i+1)*(weight_in/10) << ": " << WI_count << endl;
+        WI_count = 0;
+    }
+
+    //Unweighted in
+    for(int i = 0; i < 10; i++)
+    {
+        for(int x = 0; x < (weightless_in/10); x++)
+        {
+            UI_count += UI[(weightless_in/10)*i+x];
+        }
+        cout << "Number of nodes with weightless in degree between " << i*(weightless_in/10) <<
+            " and " << (i+1)*(weightless_in/10) << ": " << WI_count << endl;
+        UI_count = 0;
+    }
+
+    //Unweighted out
+    for(int i = 0; i < 10; i++)
+    {
+        for(int x = 0; x < (weightless_out/10); x++)
+        {
+            UO_count += UO[(weightless_out/10)*i+x];
+        }
+        cout << "Number of nodes with weightless out degree between " << i*(weightless_out/10) <<
+            " and " << (i+1)*(weightless_out/10) << ": " << UO_count << endl;
+        UO_count = 0;
+    }
 
 
 
+    return;
+}
+
+void ShortestPathDistroPrint(Path wayHome[][], const int num_verts, Vertex Nodes[]){
+    int DMax = 0, UMax = 0;
+    for(int from = 0; from < num_verts; from++)
+    {
+        for(int to = 0; to < num_verts; to++)
+        {   //find diameters
+            if(wayHome[from][to].UU_Weight > UMax)
+                UMax = WayHome[from][to].UU_Weight;
+            if(wayHome[from][to].DU_Weight > DMax)
+                DMax = wayHome[from][to].DU_Weight;
+        }
+    }
+    UndirectedPathDistributionOutput(wayHome, num_verts, Nodes, UMax);
+    DirectedPathDistributionOutput(wayHome, num_verts, Nodes, DMax);
+    return;
+}
 
 
+void UndirectedPathDistributionOutput(Path wayHome[][], const int num_verts,
+Vertex Nodes[], const int UMax){
+    int Distro[UMax+1] = {0};
+    for (int from = 0; from < num_verts; from++)
+    {
+        for(int to = 0; to < num_verts; to++)
+        {
+            if(wayHome[from][to].UU_Weight == -1)
+                Distro[0]++;
+            else
+                distro[wayHome[from][to].UU_Weight]++;
+            if(wayHome[from][to].UU_Weight == UMax)
+            {
+                cout << "Path from " << Nodes[from] << " to " << Nodes[to] <<
+                " is tied for longest shortest undirected path." << endl;
+            }
+        }
+    }
+    for(int i = 1; i < UMax; i++)
+        cout << "Undirected Unweighted paths with length " << i << " : " << Distro[i] << endl;
+    cout << Distro[0] << " unwalkable paths in Undirected Unweighted graph" << endl;
+    return;
+}
 
 
+void DirectedPathDistributionOutput(Path wayHome[][], const int num_verts,
+Vertex Nodes[], const int DMax){
+    int Distro[DMax+1] = {0};
+    for (int from = 0; from < num_verts; from++)
+    {
+        for(int to = 0; to < num_verts; to++)
+        {
+            if(wayHome[from][to].DU_Weight == -1)
+                Distro[0]++;
+            else
+                distro[wayHome[from][to].DU_Weight]++;
+            if(wayHome[from][to].DU_Weight == UMax)
+            {
+                cout << "Path from " << Nodes[from] << " to " << Nodes[to] <<
+                " is tied for longest shortest Directed path." << endl;
+            }
+        }
+    }
+    for(int i = 1; i < DMax; i++)
+        cout << " Directed Unweighted paths with length " << i << " : " << Distro[i] << endl;
+    cout << Distro[0] << " unwalkable paths in Directed Unweighted graph" << endl;
+    return;
+}
+
+void UnweightedBetweennessDisplay(Edge RBM[], const int num_edge){
+    int DMax = 0, UMax = 0;
+    for(int i = 0; i < num_edge; i++)
+    {
+        if(RBM[i].DU_BetweennessCentrality > DMax)
+            DMax = RBM[i].DU_BetweennessCentrality;
+        if(RBM[i].UU_BetweennessCentrality > UMax)
+            UMax = RBM[i].UU_BetweennessCentrality;
+    }
+    UU_BetweennessPrint(RBM, num_edge, UMax);
+    DU_BetweennessPrint(RBM, num_edge, DMax);
+
+    return;
+}
 
 
+void UU_BetweennessPrint(Edge RBM[], const int num_edge, const int UMax){
+    int Distro[UMax+1] = {0};
+    for(int i = 0; i < num_edge; i++)
+        Distro[RBM[i].UU_BetweennessCentrality]++;
+    for(int i = 1; i <= UMax; i++) //We may change this depending on the size of UMax
+        cout << "Edges with Unweighted Undirected Betweenness Centrality " << i << ": " << Distro[i] << endl;
+    return;
+}
 
 
-
-
-
-
-
-
-
+void DU_BetweennessPrint(Edge RBM[], const int num_edge, const int DMax){
+    int Distro[DMax+1] = {0};
+    for(int i = 0; i < num_edge; i++)
+        Distro[RBM[i].DU_BetweennessCentrality]++;
+    for(int i = 1; i <= DMax; i++) //We may change this depending on the size of DMax
+        cout << "Edges with Unweighted Directed Betweenness Centrality " << i << ": " << Distro[i] << endl;
+    return;
+}
 

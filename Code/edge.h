@@ -5,6 +5,8 @@ using namespace std;
 #include <fstream>
 #include <string>
 #include <iostream>
+
+#include "vertex.h"
 class Edge{
 /*
 Key to reading veriable names:

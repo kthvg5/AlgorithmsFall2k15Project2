@@ -48,7 +48,11 @@ int main(){
     //declare consts and veriables
     const int NUM_VERTEX = 547;
     const int NUM_EDGE = 1957;
-    int KickedByUU, KickedByDu;
+    const int WEIGHTED_IN_MAX = 2046;
+    const int WEIGHTED_OUT_MAX = 2865;
+    const int UNWEIGHTED_IN_MAX = 54;
+    const int UNWEIGHTED_OUT_MAX = 52;
+    int KickedByUU, KickedByDu; //Denotes how many edges are kicked by community dectection.
     Edge RBM[NUM_EDGE];
     Edge Edgy[NUM_VERTEX][NUM_VERTEX];
     Vertex Vertical[NUM_VERTEX];
@@ -69,6 +73,8 @@ int main(){
     directed_BFS(RBM, Edgy, theWay);
     undirected_BFS(RBM, Edgy, theWay);
 
+
+
     bluePill(RBM, Edgy, NUM_EDGE);
     KickedByUU = UU_Comunism(RBM, NUM_EDGE);
     KickedByDu = DU_Comunism(RBM, NUM_EDGE);
@@ -77,10 +83,4 @@ int main(){
 
     return 0;
 }
-/*things to do in gephi:
-    Find maximum in and out degrees
-    Find maximum betweenesses for weighted edges
-    Other verious queries that we decide we want to have given
-        to us on a silver platter
 
-*/

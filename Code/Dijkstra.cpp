@@ -27,7 +27,7 @@ void UW_dijkstra(Path WayHome[][], Vertex nodes[], Edge Matrix[][], int num_vert
                         }
                     }
                 }
-            }
+            }//detect if bestFrom/bestTo have been changed (maybe reset them to -1 and if they are still that, break from loop
             addToSolution(WayHome, nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
             DW_GoHome(Matrix, i, Matrix[bestFrom][bestTo].index_End, WayHome);   //paths itself back home
         }
