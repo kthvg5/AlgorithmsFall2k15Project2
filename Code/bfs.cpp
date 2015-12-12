@@ -7,7 +7,7 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
     int parent;
 
     //Iterate through the entire vertex array and find all BFS
-    for(int x = 0, x < vertices; x++){
+    for(int x = 0; x < vertices; x++){
         int from = x;
 
         //Creating the queue, place starting element into the queue
