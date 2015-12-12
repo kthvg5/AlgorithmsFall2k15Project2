@@ -26,7 +26,7 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
                     array[s].DU_Found = true;
                     d_path[x][s].DU_Parent = from;
                     d_path[x][s].DU_Weight = d_path[from][s].DU_Weight + 1;
-                    d_path[x][s].DU_GoHome(Edge d_edge[][vertices], int from, int s, Path d_path[][vertices], int parent);
+                    DU_GoHome(Edge d_edge[][vertices], int from, int s, Path d_path[][vertices], int parent);
                 }
             }
             path.pop();
@@ -62,7 +62,7 @@ void undirected_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][verti
                     array[s].UU_Found = true;
                     d_path[x][s].UU_Parent = from;
                     d_path[x][s].UU_Weight = d_path[from][s].DU_Weight + 1;
-                    d_path[x][s].UU_GoHome(Edge d_edge[][vertices], int from, int s, Path d_path[][vertices], int parent);
+                    UU_GoHome(Edge d_edge[][vertices], int from, int s, Path d_path[][vertices], int parent);
                 }
             }
             path.pop();
