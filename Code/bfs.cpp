@@ -2,7 +2,7 @@
 
 const int vertices = 547
 
-void directed_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
+void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertices])
 {
     int parent;
 
@@ -20,13 +20,13 @@ void directed_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < vertices; s++){
-                if(2d_edge.Dweight[from][s] != -1 && 2d_edge.UU_removed != true && Vertex[s].found == false){
+                if(d_edge.Dweight[from][s] != -1 && d_edge.UU_removed != true && Vertex[s].found == false){
                     parent = path.front();
                     path.push(s);
                     Vertex[s].DU_Found = true;
-                    2d_path[x][s].DU_Parent = from;
-                    2d_path[x][s].DU_Weight = 2d_path[from][s] + 1;
-                    2d_path[x][s].DU_GoHome(Edge 2d_edge[][], int from, int s, Path 2d_path[][], int parent);
+                    d_path[x][s].DU_Parent = from;
+                    d_path[x][s].DU_Weight = d_path[from][s] + 1;
+                    d_path[x][s].DU_GoHome(Edge d_edge[][vertices], int from, int s, Path d_path[][vertices], int parent);
                 }
             }
             path.pop();
@@ -38,7 +38,7 @@ void directed_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
     }
 }
 
-void undirected_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
+void undirected_BFS(Vertex array[], Edge d_edge[][], Path d_path[][])
 {
     int parent;
 
@@ -56,13 +56,13 @@ void undirected_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][])
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < vertices; s++){
-                if(2d_edge.Uweight[from][s] != -1 && 2d_edge.UU_removed != true && Vertex[s].found == false){
+                if(d_edge.Uweight[from][s] != -1 && d_edge.UU_removed != true && Vertex[s].found == false){
                     parent = path.front();
                     path.push(s);
                     Vertex[s].UU_Found = true;
-                    2d_path[x][s].UU_Parent = from;
-                    2d_path[x][s].UU_Weight = 2d_path[from][s] + 1;
-                    2d_path[x][s].UU_GoHome(Edge 2d_edge[][], int from, int s, Path 2d_path[][], int parent);
+                    d_path[x][s].UU_Parent = from;
+                    d_path[x][s].UU_Weight = d_path[from][s] + 1;
+                    d_path[x][s].UU_GoHome(Edge d_edge[][vertices], int from, int s, Path d_path[][vertices], int parent);
                 }
             }
             path.pop();
