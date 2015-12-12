@@ -20,7 +20,7 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < vertices; s++){
-                if(d_edge[from][s].Dweight != -1 && d_edge.UU_removed != true && array[s].found == false){
+                if(d_edge[from][s].Dweight != -1 && d_edge[from][s].UU_removed != true && array[s].DU_Found == false){
                     parent = path.front();
                     path.push(array[s]);
                     Vertex[s].DU_Found = true;
@@ -56,7 +56,7 @@ void undirected_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][verti
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < vertices; s++){
-                if(d_edge[from][s].Uweight != -1 && d_edge.UU_removed != true && array[s].found == false){
+                if(d_edge[from][s].Uweight != -1 && d_edge[from][s].UU_removed != true && array[s].DU_Found == false){
                     parent = path.front();
                     path.push(array[s]);
                     Vertex[s].UU_Found = true;
