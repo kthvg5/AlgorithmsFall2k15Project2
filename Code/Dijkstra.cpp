@@ -6,7 +6,7 @@ void UW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int nu
     int bestFrom, bestTo, bestWeight = INT_MAX;
     for(int i = 0; i < num_verts; i++)
     {
-        addToSolution(nodes[i], Matrix, num_verts);
+        addToSolution(wayHome, nodes[i], Matrix, num_verts);
         for(int x = 1; x < num_verts; x++)
         {
             for(int from = 0; from < num_verts; from++)   //this goes through every possible edge (yes,
