@@ -1,12 +1,12 @@
 #include "Dijkstra.h"
 
 //Directed Weighted
-void UW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int num_verts)
+void DW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int num_verts)
 {
     int bestFrom, bestTo, bestWeight = INT_MAX;
     for(int i = 0; i < num_verts; i++)
     {
-        addToSolution(WayHome, nodes[i], Matrix, num_verts);
+        DW_addToSolution(WayHome, nodes[i], Matrix, num_verts);
         for(int x = 1; x < num_verts; x++)
         {
             for(int from = 0; from < num_verts; from++)   //this goes through every possible edge (yes,
@@ -28,7 +28,7 @@ void UW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int nu
                     }
                 }
             }//detect if bestFrom/bestTo have been changed (maybe reset them to -1 and if they are still that, break from loop
-            addToSolution(WayHome, nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
+            DW_addToSolution(WayHome, nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
             DW_GoHome(Matrix, i, Matrix[bestFrom][bestTo].index_End, WayHome);   //paths itself back home
         }
         reset(Matrix, nodes, num_verts);
@@ -65,7 +65,7 @@ void UW_dijkstra(Path WayHome[][], Vertex nodes[], Edge Matrix[][], int num_vert
     int bestFrom, bestTo, bestWeight = INT_MAX;
     for(int i = 0; i < num_verts; i++)
     {
-        addToSolution(nodes[i], Matrix, num_verts);
+        UW_addToSolution(nodes[i], Matrix, num_verts);
         for(int x = 1; x < num_verts; x++)
         {
             for(int from = 0; from < num_verts; from++)   //this goes through every possible edge (yes,
@@ -87,7 +87,7 @@ void UW_dijkstra(Path WayHome[][], Vertex nodes[], Edge Matrix[][], int num_vert
                     }
                 }
             }
-            addToSolution(WayHome, nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
+            UW_addToSolution(WayHome, nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
             UW_GoHome(Matrix, i, Matrix[bestFrom][bestTo].index_End, WayHome);   //paths itself back home
         }
         reset(Matrix, nodes, num_verts);
