@@ -8,9 +8,9 @@
 
 using namespace std;
 
-void directed_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][]);
+void directed_BFS(Vertex array[], Edge d_edge[][547], Path d_path[][547]);
 
-void undirected_BFS(Vertex array[], Edge 2d_edge[][], Path 2d_path[][]);
+void undirected_BFS(Vertex array[], Edge d_edge[][547], Path d_path[][547]);
 
 #endif //BFS_H
 
