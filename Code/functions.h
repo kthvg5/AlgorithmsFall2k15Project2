@@ -67,7 +67,7 @@ void LSP(Path wayHome[][547], int num_verts, Vertex Nodes[]);
 
 //calculates and prints out the spread of degrees among nodes
 void DegPrint(Vertex Nodes[], const int weight_in, const int weight_out,
-const int weightless_in, const in weightless_out)
+const int weightless_in, const int weightless_out)
 
 //finds diameter of both directed and undirected forms of unweighted graph
 //then passes those values to the two functions below this one for distribution
