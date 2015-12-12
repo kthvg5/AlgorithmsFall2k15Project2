@@ -1,7 +1,7 @@
 #include "Dijkstra.h"
 
 //Directed Weighted
-void UW_dijkstra(Path WayHome[][], Vertex nodes[], Edge Matrix[][], int num_verts)
+void UW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int num_verts)
 {
     int bestFrom, bestTo, bestWeight = INT_MAX;
     for(int i = 0; i < num_verts; i++)
