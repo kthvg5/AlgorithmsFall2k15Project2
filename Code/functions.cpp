@@ -439,8 +439,38 @@ Vertex Nodes[], const int DMax){
     return;
 }
 
+void UnweightedBetweennessDisplay(Edge RBM[], const int num_edge){
+    int DMax = 0, UMax = 0;
+    for(int i = 0; i < num_edge; i++)
+    {
+        if(RBM[i].DU_BetweennessCentrality > DMax)
+            DMax = RBM[i].DU_BetweennessCentrality;
+        if(RBM[i].UU_BetweennessCentrality > UMax)
+            UMax = RBM[i].UU_BetweennessCentrality;
+    }
+    UU_BetweennessPrint(RBM, num_edge, UMax);
+    DU_BetweennessPrint(RBM, num_edge, DMax);
+
+    return;
+}
 
 
+void UU_BetweennessPrint(Edge RBM[], const int num_edge, const int UMax){
+    int Distro[UMax+1] = {0};
+    for(int i = 0; i < num_edge; i++)
+        Distro[RBM[i].UU_BetweennessCentrality]++;
+    for(int i = 1; i <= UMax; i++) //We may change this depending on the size of UMax
+        cout << "Edges with Unweighted Undirected Betweenness Centrality " << i << ": " << Distro[i] << endl;
+    return;
+}
 
 
+void DU_BetweennessPrint(Edge RBM[], const int num_edge, const int DMax){
+    int Distro[DMax+1] = {0};
+    for(int i = 0; i < num_edge; i++)
+        Distro[RBM[i].DU_BetweennessCentrality]++;
+    for(int i = 1; i <= DMax; i++) //We may change this depending on the size of DMax
+        cout << "Edges with Unweighted Directed Betweenness Centrality " << i << ": " << Distro[i] << endl;
+    return;
+}
 

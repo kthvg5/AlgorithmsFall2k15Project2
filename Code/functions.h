@@ -82,18 +82,31 @@ Vertex Nodes[], const int UMax);
 void DirectedPathDistributionOutput(Path wayHome[][], const int num_verts,
 Vertex Nodes[], const int DMax);
 
-//calculates and prints
+//calculates and prints unweighted betweenness centrality. Follows the
+//pattern of the functions above.
+//NOTE--CALL BLUE PILL BEFORE CALLING THIS!!!
+void UnweightedBetweennessDisplay(Edge RBM[], const int num_edge);
+
+//calculates and prints distribution of betweenness centrality of Undirected Unweighted graph
+void UU_BetweennessPrint(Edge RBM[], const int num_edge, const int UMax);
+
+//calculates and prints distribution of betweenness centrality of Directed Unweighted graph
+void DU_BetweennessPrint(Edge RBM[], const int num_edge, const int DMax);
 
 
+/*
+Functions still needed:
+    Fixes weighted degree (currently I dont take into account the weight of the edge)
+    Prints out weighted degree distribution
+    Find and print unweighted closeness centrality distribution of a vertices
 
 
+Other things still needed:
+        Int main needs to be finished, but I think we should wait to do that until we know what
+            all it needs to include
+        Bugfixing.
+        compiling
+        Post compiling bugfixing
+        submition
 
-
-
-
-
-
-
-
-
-
+*/
