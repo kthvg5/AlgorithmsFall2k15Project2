@@ -17,7 +17,7 @@ void DW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int nu
                     {
                         if(Matrix[from][to].Dweight !=-1)   //since the agerage node has
                         {   //like four edges going out of it, this should also cut some time. (note, weight of -1 indicates no edge)
-                            if((Matrix[from][to].Dweight + Path[from][to].weight) < bestWeight//checks if weight is better than current
+                            if((Matrix[from][to].Dweight + WayHome[from][to].weight) < bestWeight//checks if weight is better than current
                             && Matrix[from][to].DW_Solution == false   //makes sure this isnt an edge we already got
                             && Matrix[from][to].DW_Frontier == true)   //makes sure this edge is one we are able to get
                             {
@@ -28,7 +28,7 @@ void DW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int nu
                     }
                 }
             }//detect if bestFrom/bestTo have been changed (maybe reset them to -1 and if they are still that, break from loop
-            addToSolution(WayHome, nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
+            DW_addToSolution(nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
             DW_GoHome(Matrix, i, Matrix[bestFrom][bestTo].index_End, WayHome);   //paths itself back home
         }
         reset(Matrix, nodes, num_verts);
@@ -76,7 +76,7 @@ void UW_dijkstra(Path WayHome[][], Vertex nodes[], Edge Matrix[][], int num_vert
                     {
                         if(Matrix[from][to].Uweight !=-1)   //since the agerage node has
                         {   //like four edges going out of it, this should also cut some time. (note, weight of -1 indicates no edge)
-                            if(Matrix[from][to].Uweight + Path[from][to].weight < bestWeight//checks if weight is better than current
+                            if((Matrix[from][to].Uweight + WayHome[from][to].weight) < bestWeight//checks if weight is better than current
                             && Matrix[from][to].UW_Solution == false   //makes sure this isnt an edge we already got
                             && Matrix[from][to].UW_Frontier == true)   //makes sure this edge is one we are able to get
                             {
@@ -87,7 +87,7 @@ void UW_dijkstra(Path WayHome[][], Vertex nodes[], Edge Matrix[][], int num_vert
                     }
                 }
             }
-            addToSolution(WayHome, nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
+            UW_addToSolution(nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
             UW_GoHome(Matrix, i, Matrix[bestFrom][bestTo].index_End, WayHome);   //paths itself back home
         }
         reset(Matrix, nodes, num_verts);
