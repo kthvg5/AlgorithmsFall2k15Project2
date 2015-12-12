@@ -11,7 +11,7 @@ using namespace std;
 
 //function that takes a directed adjacency matrix and makes it into an
 //undirected adjacency matrix, but only the top right half along the diagonal.
-void undirect(Edge matrix[][]);
+void undirect(Edge matrix[][547]);
 
 //takes input in form of edge list (using format from,to,weight) and fills edge
 //array RBM (replacable by matrix) in alphabetic order with respect to From
