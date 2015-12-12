@@ -14,7 +14,7 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
         queue<Vertex> path;
         path.push(x); //queue
 
-        array[x].DU_found = true;
+        array[x].DU_Found = true;
 
         //place the elements connected to the starting element into the queue and into the list
         //in the correct order
