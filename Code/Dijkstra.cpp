@@ -31,7 +31,7 @@ void DW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int nu
             DW_addToSolution(nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
             DW_GoHome(Matrix, i, Matrix[bestFrom][bestTo].index_End, WayHome);   //paths itself back home
         }
-        reset(Matrix, nodes, num_verts);
+        DW_reset(Matrix, nodes, num_verts);
     }
     return;
 }
@@ -90,7 +90,7 @@ void UW_dijkstra(Path WayHome[][], Vertex nodes[], Edge Matrix[][], int num_vert
             UW_addToSolution(nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts);   //adds "Best" node to solution
             UW_GoHome(Matrix, i, Matrix[bestFrom][bestTo].index_End, WayHome);   //paths itself back home
         }
-        reset(Matrix, nodes, num_verts);
+        UW_reset(Matrix, nodes, num_verts);
     }
     return;
 }
