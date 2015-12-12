@@ -46,6 +46,4 @@ void Vertex::UU_Cross(){
     return;
 }
 
-void
-
 
