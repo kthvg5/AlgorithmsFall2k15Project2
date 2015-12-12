@@ -38,7 +38,7 @@ public:
     //statistics on Undirected Weighted
     int UW_LSP_Weight;
     string UW_LSP_EndNode;
-    bool UW_Soluttion;
+    bool UW_Solution;
 
     //statistics on the Directed Unweighted graph
     int DU_InDegree;
