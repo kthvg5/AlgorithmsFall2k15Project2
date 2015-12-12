@@ -14,13 +14,13 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
         queue<Vertex> path;
         path.push(x); //queue
 
-        Vertex[x].DU_found = true;
+        array[x].DU_found = true;
 
         //place the elements connected to the starting element into the queue and into the list
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < vertices; s++){
-                if(d_edge.Dweight[from][s] != -1 && d_edge.UU_removed != true && Vertex[s].found == false){
+                if(d_edge.Dweight[from][s] != -1 && d_edge.UU_removed != true && array[s].found == false){
                     parent = path.front();
                     path.push(s);
                     Vertex[s].DU_Found = true;
@@ -33,7 +33,7 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
         }
         
         for(int r = 0; r < vertices; r++){
-            Vertex[x][r].DU_Found = false; 
+            array[r].DU_Found = false; 
         }
     }
 }
@@ -50,13 +50,13 @@ void undirected_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][verti
         queue<Vertex> path;
         path.push(x); //queue
 
-        Vertex[x].UU_found = true;
+        array[x].UU_found = true;
 
         //place the elements connected to the starting element into the queue and into the list
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < vertices; s++){
-                if(d_edge.Uweight[from][s] != -1 && d_edge.UU_removed != true && Vertex[s].found == false){
+                if(d_edge.Uweight[from][s] != -1 && d_edge.UU_removed != true && array[s].found == false){
                     parent = path.front();
                     path.push(s);
                     Vertex[s].UU_Found = true;
@@ -69,7 +69,7 @@ void undirected_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][verti
         }
         
         for(int r = 0; r < vertices; r++){
-            Vertex[x][r].DU_Found = false; 
+            array[r].DU_Found = false; 
         }
     }
 }
