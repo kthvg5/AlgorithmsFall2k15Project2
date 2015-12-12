@@ -36,7 +36,7 @@ void DW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int nu
     return;
 }
 
-void DW_addToSolution(Vertex Node, Edge Matrix[][], int num_verts, int from){
+void DW_addToSolution(Vertex Node, Edge Matrix[][547], int num_verts, int from){
     Node.DW_Solution = true;
     for (int i = 0; i < num_verts; i++)
     {
@@ -46,7 +46,7 @@ void DW_addToSolution(Vertex Node, Edge Matrix[][], int num_verts, int from){
     return;
 }
 
-void DW_reset(Edge Matrix[][], Vertex Nodes[], int num_verts){
+void DW_reset(Edge Matrix[][547], Vertex Nodes[], int num_verts){
     for(int i = 0; i < num_verts; i++)
     {
         Nodes[i].DW_Solution = false;
@@ -60,7 +60,7 @@ void DW_reset(Edge Matrix[][], Vertex Nodes[], int num_verts){
 }
 
 //Undirected Weighted
-void UW_dijkstra(Path WayHome[][], Vertex nodes[], Edge Matrix[][], int num_verts)
+void UW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int num_verts)
 {
     int bestFrom, bestTo, bestWeight = INT_MAX;
     for(int i = 0; i < num_verts; i++)
@@ -95,7 +95,7 @@ void UW_dijkstra(Path WayHome[][], Vertex nodes[], Edge Matrix[][], int num_vert
     return;
 }
 
-void UW_addToSolution(Vertex Node, Edge Matrix[][], int num_verts, int from){
+void UW_addToSolution(Vertex Node, Edge Matrix[][547], int num_verts, int from){
     Node.UW_Solution = true;
     for (int i = 0; i < num_verts; i++)
     {
@@ -105,7 +105,7 @@ void UW_addToSolution(Vertex Node, Edge Matrix[][], int num_verts, int from){
     return;
 }
 
-void UW_reset(Edge Matrix[][], Vertex Nodes[], int num_verts){
+void UW_reset(Edge Matrix[][547], Vertex Nodes[], int num_verts){
     for(int i = 0; i < num_verts; i++)
     {
         Nodes[i].UW_Solution = false;
