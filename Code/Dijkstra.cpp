@@ -11,7 +11,7 @@ void DW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int nu
         {
             for(int from = 0; from < num_verts; from++)   //this goes through every possible edge (yes,
             {   //even the ones that aren't there) and finds which one is the best adition to our solution.
-                if(nodes[from].solution == true) //this should do a lot of
+                if(nodes[from].DW_Solution == true) //this should do a lot of
                 {       //optimizing since it cuts out half of our looping
                     for(int to = 0; to < num_verts; to++)
                     {
@@ -70,7 +70,7 @@ void UW_dijkstra(Path WayHome[][], Vertex nodes[], Edge Matrix[][], int num_vert
         {
             for(int from = 0; from < num_verts; from++)   //this goes through every possible edge (yes,
             {   //even the ones that aren't there) and finds which one is the best adition to our solution.
-                if(nodes[from].solution == true) //this should do a lot of
+                if(nodes[from].UW_Solution == true) //this should do a lot of
                 {       //optimizing since it cuts out half of our looping
                     for(int to = 0; to < num_verts; to++)
                     {
