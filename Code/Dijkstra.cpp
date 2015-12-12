@@ -99,8 +99,8 @@ void UW_addToSolution(Vertex Node, Edge Matrix[][547], int num_verts, int from){
     Node.UW_Solution = true;
     for (int i = 0; i < num_verts; i++)
     {
-        Matrix[i][Node.index].UW_Solution = True;
-        Matrix[Node.index][i].UW_Frontier = True;
+        Matrix[i][Node.index].UW_Solution = true;
+        Matrix[Node.index][i].UW_Frontier = true;
     }
     return;
 }
