@@ -48,7 +48,11 @@ int main(){
     //declare consts and veriables
     const int NUM_VERTEX = 547;
     const int NUM_EDGE = 1957;
-    int KickedByUU, KickedByDu;
+    const int WEIGHTED_IN_MAX = 2046;
+    const int WEIGHTED_OUT_MAX = 2865;
+    const int UNWEIGHTED_IN_MAX = 54;
+    const int UNWEIGHTED_OUT_MAX = 52;
+    int KickedByUU, KickedByDu; //Denotes how many edges are kicked by community dectection.
     Edge RBM[NUM_EDGE];
     Edge Edgy[NUM_VERTEX][NUM_VERTEX];
     Vertex Vertical[NUM_VERTEX];

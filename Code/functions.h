@@ -65,18 +65,24 @@ void degreeFinder(Vertex nodesBro[], Edge matrix[][], int num_verts);
 //NOTE: this does not print that out. It just sets the values in each node
 void LSP(Path wayHome[][], int num_verts, Vertex Nodes[]);
 
+//calculates and prints out the spread of degrees among nodes
+void DegPrint(Vertex Nodes[], const int weight_in, const int weight_out,
+const int weightless_in, const in weightless_out)
 
+//finds diameter of both directed and undirected forms of unweighted graph
+//then passes those values to the two functions below this one for distribution
+//calculation and printing
+void ShortestPathDistroPrint(Path wayHome[][], const int num_verts, Vertex Nodes[]);
 
+//calculates and prints distribution of shortest paths for Undirected Unweighted graph
+void UndirectedPathDistributionOutput(Path wayHome[][], const int num_verts,
+Vertex Nodes[], const int UMax);
 
+//calculates and prints distribution of shortest paths for Directed Unweighted graph
+void DirectedPathDistributionOutput(Path wayHome[][], const int num_verts,
+Vertex Nodes[], const int DMax);
 
-
-
-
-
-
-
-
-
+//calculates and prints
 
 
 

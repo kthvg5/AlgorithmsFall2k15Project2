@@ -6,6 +6,8 @@ using namespace std;
 #include <fstream>
 #include <string>
 #include <iostream>
+
+#include "edge.h"
 class Path{
 /*
 Key to reading veriable names:
