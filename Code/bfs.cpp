@@ -38,7 +38,7 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
     }
 }
 
-void undirected_BFS(Vertex array[], Edge d_edge[][], Path d_path[][])
+void undirected_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertices])
 {
     int parent;
 
