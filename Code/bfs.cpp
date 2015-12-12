@@ -4,7 +4,7 @@ const int vertices = 547;
 
 void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertices])
 {
-    int parent;
+    Vertex parent;
 
     //Iterate through the entire vertex array and find all BFS
     for(int x = 0; x < vertices; x++){
@@ -40,7 +40,7 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
 
 void undirected_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertices])
 {
-    int parent;
+    Vertex parent;
 
     //Iterate through the entire vertex array and find all BFS
     for(int x = 0; x < vertices; x++){
