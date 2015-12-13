@@ -3,12 +3,12 @@
 Path::Path()
 {
     DW_Parent = -1;
-    DW_Weight = int.max;
+    DW_Weight = INT_MAX/2;
     UW_Parent = -1;
-    UW_Weight = int.max;
+    UW_Weight = INT_MAX/2;
     DU_Parent = -1;
-    DU_Weight = int.max;
+    DU_Weight = INT_MAX/2;
     UU_Parent = -1;
-    UU_Weight = int.max;
+    UU_Weight = INT_MAX/2;
 }
 

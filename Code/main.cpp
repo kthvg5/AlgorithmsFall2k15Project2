@@ -45,6 +45,7 @@ as well would count.
 At verious points through this we will be outputting some information so that we can make graphs out of it later.
 */
 int main(){
+    cout << "Is this even happening right now? " << endl;
     //declare consts and veriables
     const int NUM_VERTEX = 547;
     const int NUM_EDGE = 1957;
@@ -53,25 +54,35 @@ int main(){
     const int UNWEIGHTED_IN_MAX = 54;
     const int UNWEIGHTED_OUT_MAX = 52;
     int KickedByUU, KickedByDu; //Denotes how many edges are kicked by community dectection.
-    Edge RBM[NUM_EDGE];
-    Edge Edgy[NUM_VERTEX][NUM_VERTEX];
-    Vertex Vertical[NUM_VERTEX];
-    Path theWay[NUM_VERTEX][NUM_VERTEX];
+    cout << "Well, there I went" << endl;
 
-    //find stats required for assignment
-    degreeFinder(Vertical, Edgy, NUM_VERTEX);
+    Edge RBM[NUM_EDGE];
+
+    cout << "well, here we go" << endl;
+    static Edge Edgy[NUM_VERTEX][NUM_VERTEX];
+
+    Vertex Vertical[NUM_VERTEX];
+    static Path theWay[NUM_VERTEX][NUM_VERTEX];
+
+    cout << "Do I get here?" << endl;
 
     //setting up arrays and matrixes
     edgeArrayInit(RBM, NUM_EDGE);
+    cout << "edge array initialized" << endl;
     vertArrayInit(Vertical, NUM_EDGE, RBM);
-    redPill(Edgy, RBM, Vertical, NUM_EDGE);
-
+    cout << "vertex array initialized" << endl;
+    redPill(Edgy, RBM, Vertical, NUM_EDGE, NUM_VERTEX);
+    cout << "Down the rabbit hole" << endl;
+    //find stats required for assignment
+    degreeFinder(Vertical, Edgy, NUM_VERTEX);
+    cout << "found degrees" << endl;
+    cout << "reporting for dijkstra" << endl;
     //dijkstra
     DW_dijkstra(theWay,Vertical, Edgy, NUM_VERTEX);
     UW_dijkstra(theWay, Vertical, Edgy, NUM_VERTEX);
     //bfs
-    directed_BFS(RBM, Edgy, theWay);
-    undirected_BFS(RBM, Edgy, theWay);
+    directed_BFS(Vertical, Edgy, theWay);
+    undirected_BFS(Vertical, Edgy, theWay);
 
 
 

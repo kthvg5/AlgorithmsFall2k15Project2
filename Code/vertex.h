@@ -65,6 +65,7 @@ public:
     //cross through functions (called when a path goes through a node)
     void DU_Cross();
     void UU_Cross();
+
 };
 
 #endif // VERTEX_H

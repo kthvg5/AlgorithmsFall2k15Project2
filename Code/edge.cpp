@@ -1,8 +1,8 @@
 #include "edge.h"
 
 Edge::Edge(){
-    StartVertex = NULL;
-    EndVertex = NULL;
+    StartVertex = "NULL";
+    EndVertex = "NULL";
     index_Start = -1;
     index_End = -1;
     Dweight = -1;

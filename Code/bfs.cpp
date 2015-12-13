@@ -31,9 +31,9 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
             }
             path.pop();
         }
-        
+
         for(int r = 0; r < vertices; r++){
-            array[r].DU_Found = false; 
+            array[r].DU_Found = false;
         }
     }
 }
@@ -67,9 +67,9 @@ void undirected_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][verti
             }
             path.pop();
         }
-        
+
         for(int r = 0; r < vertices; r++){
-            array[r].DU_Found = false; 
+            array[r].DU_Found = false;
         }
     }
 }

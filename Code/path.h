@@ -6,6 +6,7 @@ using namespace std;
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <climits>
 
 #include "edge.h"
 class Path{
