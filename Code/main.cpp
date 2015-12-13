@@ -72,21 +72,24 @@ int main(){
     vertArrayInit(Vertical, NUM_EDGE, RBM);
     cout << "vertex array initialized" << endl;
     redPill(Edgy, RBM, Vertical, NUM_EDGE, NUM_VERTEX);
+    undirect(Edgy);
     cout << "Down the rabbit hole" << endl;
     //find stats required for assignment
     degreeFinder(Vertical, Edgy, NUM_VERTEX);
-    cout << "found degrees" << endl;
-    cout << "reporting for dijkstra" << endl;
+    DegPrint(Vertical, WEIGHTED_IN_MAX, WEIGHTED_OUT_MAX, UNWEIGHTED_IN_MAX, UNWEIGHTED_OUT_MAX, NUM_VERTEX);
     //dijkstra
-    DW_dijkstra(theWay,Vertical, Edgy, NUM_VERTEX);
-    UW_dijkstra(theWay, Vertical, Edgy, NUM_VERTEX);
+//    DW_dijkstra(theWay,Vertical, Edgy, NUM_VERTEX);
+  //  UW_dijkstra(theWay, Vertical, Edgy, NUM_VERTEX);
     //bfs
     directed_BFS(Vertical, Edgy, theWay);
     undirected_BFS(Vertical, Edgy, theWay);
-
+    cout << "BFS happened" << endl;
+    cout << "Calling shortestPathDistroPrint" << endl;
+    ShortestPathDistroPrint(theWay, NUM_VERTEX, Vertical);
 
 
     bluePill(RBM, Edgy, NUM_EDGE);
+    cout << "blue pill taken" << endl;
     KickedByUU = UU_Comunism(RBM, NUM_EDGE);
     KickedByDu = DU_Comunism(RBM, NUM_EDGE);
 

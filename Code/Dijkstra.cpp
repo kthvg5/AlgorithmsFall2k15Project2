@@ -14,27 +14,26 @@ void DW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int nu
             bestWeight = INT_MAX;
             for(int from = 0; from < num_verts; from++)   //this goes through every possible edge (yes,
             {   //even the ones that aren't there) and finds which one is the best adition to our solution.
-                if(nodes[from].DW_Solution != true) //this should do a lot of
-                {       //optimizing since it cuts out half of our looping
-                    for(int to = 0; to < num_verts; to++)
-                    {
-                        if(Matrix[from][to].Dweight !=-1)   //since the average node has
-                        {   //like four edges going out of it, this should also cut some time. (note, weight of -1 indicates no edge)
-                            if((Matrix[from][to].Dweight + WayHome[from][to].DW_Weight) < bestWeight//checks if weight is better than current
-                            && Matrix[from][to].DW_Solution == false   //makes sure this isnt an edge we already got
-                            && Matrix[from][to].DW_Frontier == true)   //makes sure this edge is one we are able to get
-                            {
-                                cout << "Im here!" << endl;
-                                bestFrom = from;
-                                bestTo = to;
-                                bestWeight = (Matrix[from][to].Dweight + WayHome[from][to].DW_Weight) ; 
-                            }
+                for(int to = 0; to < num_verts; to++)
+                {
+                    if(Matrix[from][to].Dweight !=-1)   //since the average node has
+                    {   //like four edges going out of it, this should also cut some time. (note, weight of -1 indicates no edge)
+                        if((Matrix[from][to].Dweight + WayHome[i][from].DW_Weight) < bestWeight//checks if weight is better than current
+                        && Matrix[from][to].DW_Solution == false   //makes sure this isnt an edge we already got
+                        && Matrix[from][to].DW_Frontier == true)   //makes sure this edge is one we are able to get
+                        {
+                            bestFrom = from;
+                            bestTo = to;
+                            bestWeight = (Matrix[from][to].Dweight + WayHome[i][from].DW_Weight) ;
+                            cout << "in loop best from =" << bestFrom << endl;
+                            cout << "in loop best to = "<< bestTo << endl;
+                            cout << "in loop best weight = " << bestWeight << endl;
                         }
                     }
                 }
             }//detect if bestFrom/bestTo have been changed (maybe reset them to -1 and if they are still that, break from loop
             cout << "x=" << x << endl;
-            DW_addToSolution(nodes[Matrix[bestFrom][bestTo].index_End], Matrix, num_verts, bestFrom);   //adds "Best" node to solution
+            DW_addToSolution(nodes[bestTo], Matrix, num_verts, bestFrom);   //adds "Best" node to solution
             cout << "i = " << i << endl;
             cout << "bestFrom =" << bestFrom << endl;
             cout << "bestTo =" << bestTo << endl;

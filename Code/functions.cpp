@@ -392,12 +392,15 @@ void ShortestPathDistroPrint(Path wayHome[][547], const int num_verts, Vertex No
     {
         for(int to = 0; to < num_verts; to++)
         {   //find diameters
+        cout << wayHome[from][to].DU_Weight << endl;
             if(wayHome[from][to].UU_Weight > UMax)
                 UMax = wayHome[from][to].UU_Weight;
             if(wayHome[from][to].DU_Weight > DMax)
                 DMax = wayHome[from][to].DU_Weight;
         }
     }
+    cout << UMax << DMax << endl;
+    cout << "Do I get here? Find out next week on DRAGON BALL ZEE!" << endl;
     UndirectedPathDistributionOutput(wayHome, num_verts, Nodes, UMax);
     DirectedPathDistributionOutput(wayHome, num_verts, Nodes, DMax);
     return;
