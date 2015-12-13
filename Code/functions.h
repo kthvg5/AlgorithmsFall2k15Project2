@@ -33,12 +33,7 @@ void UU_GoHome(Edge matrix[][547], int from, int to, Path parents[][547], Vertex
 //takes an array of edges and places them into the array
 //pass in: edge array, edge matrix, and path array
 //yes this is a reference to The Matrix
-void redPill(Edge matrix[][547], Edge RBM[], Vertex vertical[], int num_edge);
-
-//binary search implimented for our nodes.
-//takes in Vertex array and a string Name.
-//returns int value of index. Sorry Morales, no Pointers
-int VertexSearch (Vertex vertical[], int left, int right, string name);
+void redPill(Edge matrix[][547], Edge RBM[], Vertex vertical[], int num_edge, int num_vert);
 
 //takes a matrix of edges and uses it to update the array
 //yes, this is still a reference ot The Matrix
@@ -67,7 +62,7 @@ void LSP(Path wayHome[][547], int num_verts, Vertex Nodes[]);
 
 //calculates and prints out the spread of degrees among nodes
 void DegPrint(Vertex Nodes[], const int weight_in, const int weight_out,
-const int weightless_in, const int weightless_out);
+const int weightless_in, const int weightless_out, const int num_verts);
 
 //finds diameter of both directed and undirected forms of unweighted graph
 //then passes those values to the two functions below this one for distribution

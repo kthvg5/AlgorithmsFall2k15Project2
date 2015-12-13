@@ -19,8 +19,8 @@ void UW_dijkstra(Path WayHome[][547], Vertex nodes[], Edge Matrix[][547], int nu
 //adds a node and it's incoming edges to the solution and it's outgoing
 //edges to the frontier. There are probably better ways to do this, but
 //we are using bools.
-void DW_addToSolution(Vertex Node, Edge Matrix[][547], int num_verts);
-void UW_addToSolution(Vertex Node, Edge Matrix[][547], int num_verts);
+void DW_addToSolution(Vertex Node, Edge Matrix[][547], int num_verts, int from);
+void UW_addToSolution(Vertex Node, Edge Matrix[][547], int num_verts, int from);
 
 //sets all frontier and solution bools to false
 void DW_reset(Edge Matrix[][547], Vertex Nodes[], int num_verts);

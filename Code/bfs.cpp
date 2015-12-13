@@ -13,14 +13,15 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
         //Creating the queue, place starting element into the queue
         queue<Vertex> path;
         path.push(array[x]); //queue
-
+        parent = path.front();
         array[x].DU_Found = true;
-
+        d_path[x][x].DU_Parent = x;
+        d_path[x][x].DU_Weight = 0;
         //place the elements connected to the starting element into the queue and into the list
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < vertices; s++){
-                if(d_edge[from][s].Dweight != -1 && d_edge[from][s].UU_Removed != true && array[s].DU_Found == false){
+                if(d_edge[parent.index][s].Dweight != -1 && d_edge[from][s].DU_Removed != true && array[s].DU_Found == false){
                     parent = path.front();
                     path.push(array[s]);
                     array[s].DU_Found = true;
@@ -31,9 +32,9 @@ void directed_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][vertice
             }
             path.pop();
         }
-        
+
         for(int r = 0; r < vertices; r++){
-            array[r].DU_Found = false; 
+            array[r].DU_Found = false;
         }
     }
 }
@@ -51,25 +52,26 @@ void undirected_BFS(Vertex array[], Edge d_edge[][vertices], Path d_path[][verti
         path.push(array[x]); //queue
 
         array[x].UU_Found = true;
-
+        d_path[x][x].UU_Parent = x;
+        d_path[x][x].UU_Weight = 0;
         //place the elements connected to the starting element into the queue and into the list
         //in the correct order
         while(!path.empty()){
             for(int s = 0; s < vertices; s++){
-                if(d_edge[from][s].Uweight != -1 && d_edge[from][s].UU_Removed != true && array[s].DU_Found == false){
+                if(d_edge[from][s].Uweight != -1 && d_edge[from][s].UU_Removed != true && array[s].UU_Found == false){
                     parent = path.front();
                     path.push(array[s]);
                     array[s].UU_Found = true;
                     d_path[x][s].UU_Parent = from;
-                    d_path[x][s].UU_Weight = d_path[from][s].DU_Weight + 1;
+                    d_path[x][s].UU_Weight = d_path[from][s].UU_Weight + 1;
                     UU_GoHome(d_edge, from, s, d_path, parent);
                 }
             }
             path.pop();
         }
-        
+
         for(int r = 0; r < vertices; r++){
-            array[r].DU_Found = false; 
+            array[r].UU_Found = false;
         }
     }
 }

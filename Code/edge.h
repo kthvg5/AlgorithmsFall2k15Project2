@@ -3,8 +3,10 @@
 using namespace std;
 
 #include <fstream>
+#include <string.h>
 #include <string>
 #include <iostream>
+#include <cstdio>
 
 #include "vertex.h"
 class Edge{
@@ -36,10 +38,10 @@ public:
 
 
     //Traversal functions
-    void DW_Traverce();
-    void DU_Traverce(Vertex starts_at);
-    void UW_Traverce();
-    void UU_Traverce(Vertex starts_at);
+    void DW_Traverse();
+    void DU_Traverse(Vertex starts_at);
+    void UW_Traverse();
+    void UU_Traverse(Vertex starts_at);
 
 
 };
